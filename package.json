@@ -13,6 +13,7 @@
     "@heroicons/react": "^1.0.6",
     "@project-serum/borsh": "^0.2.5",
     "@solana/spl-token": "^0.2.0",
+    "@solana/wallet-adapter-backpack": "^0.1.14",
     "@solana/wallet-adapter-base": "^0.9.7",
     "@solana/wallet-adapter-react": "^0.15.6",
     "@solana/wallet-adapter-react-ui": "^0.9.8",
@@ -24,6 +25,7 @@
     "next": "latest",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-slick": "^0.30.2",
     "react-toastify": "^9.0.5"
   },
   "devDependencies": {
