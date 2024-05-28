@@ -5,7 +5,7 @@ const Index = () => {
   const [displayRequirements, setDisplayRequirements] = React.useState(false);
 
   return (
-    <main>
+    <main className="overflow-hidden">
       <section className="background-section ">
         <br />
         <br />

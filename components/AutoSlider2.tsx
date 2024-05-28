@@ -17,6 +17,8 @@ const AutoPlaySlide2 = () => {
     autoplaySpeed: 2000,
     cssEase: "linear",
     rtl: true,
+    nextArrow: false,
+    prevArrow: false,
   };
 
   return (

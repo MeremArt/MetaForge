@@ -16,6 +16,8 @@ const AutoPlaySlide = () => {
     draggable: true,
     autoplaySpeed: 2000,
     cssEase: "linear",
+    nextArrow: false,
+    prevArrow: false,
   };
 
   return (

@@ -5,7 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Navbar from "../components/Navbar";
 
 import WalletContextProvider from "../contexts/WalletContextProvider";
-
+import Footer from "../components/Footer";
 import Head from "next/head";
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -23,6 +23,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <ToastContainer />
 
         <Component {...pageProps} />
+        <Footer />
       </WalletContextProvider>
     </>
   );
