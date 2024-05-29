@@ -160,7 +160,7 @@ const Index = () => {
         <br />
         <br />
       </section>
-      <div className="center mt-44">
+      <div className="center mt-52">
         <section className="INFTs-background-section rounded-xl"></section>
       </div>
     </main>
