@@ -1,3 +1,4 @@
+import React, { FC, ReactNode } from "react";
 import {
   ConnectionProvider,
   WalletProvider,
@@ -8,7 +9,12 @@ import * as walletAdapterWallets from "@solana/wallet-adapter-wallets";
 import * as web3 from "@solana/web3.js";
 require("@solana/wallet-adapter-react-ui/styles.css");
 
-const WalletContextProvider = ({ children }) => {
+interface WalletContextProviderProps {
+  children: ReactNode;
+}
+const WalletContextProvider: FC<WalletContextProviderProps> = ({
+  children,
+}) => {
   const endpoint = web3.clusterApiUrl("mainnet-beta");
   const wallets = [
     new walletAdapterWallets.PhantomWalletAdapter(),
