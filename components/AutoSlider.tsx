@@ -25,37 +25,37 @@ const AutoPlaySlide = () => {
       <Slider {...settings}>
         <div className="individual_slides">
           <img
-            src="https://res.cloudinary.com/dtfvdjvyr/image/upload/v1716857534/Frame_106_k3n6ez.png"
+            src="https://res.cloudinary.com/dtfvdjvyr/image/upload/v1716968674/Frame_108_1_flg08b.png"
             alt="features"
           />
         </div>
         <div className="individual_slides">
           <img
-            src="https://res.cloudinary.com/dtfvdjvyr/image/upload/v1716807921/Frame_104_2_jsgsq4.png"
+            src="https://res.cloudinary.com/dtfvdjvyr/image/upload/v1716968674/Frame_107_1_xraikx.png"
             alt="features"
           />
         </div>
         <div className="individual_slides">
           <img
-            src="https://res.cloudinary.com/dtfvdjvyr/image/upload/v1716857238/Frame_105_ppjve4.png"
+            src="https://res.cloudinary.com/dtfvdjvyr/image/upload/v1716968674/Frame_106_1_cszdhc.png"
             alt="features"
           />
         </div>
         <div>
           <img
-            src="https://res.cloudinary.com/dtfvdjvyr/image/upload/v1716857236/Frame_108_smedj4.png"
+            src="https://res.cloudinary.com/dtfvdjvyr/image/upload/v1716968673/Frame_103_1_d64qoq.png"
             alt="features"
           />
         </div>
         <div className="individual_slides">
           <img
-            src="https://res.cloudinary.com/dtfvdjvyr/image/upload/v1716857534/Frame_107_idhdcb.png"
+            src="https://res.cloudinary.com/dtfvdjvyr/image/upload/v1716968673/Frame_105_1_xra0yc.png"
             alt="features"
           />
         </div>
         <div className="individual_slides">
           <img
-            src="https://res.cloudinary.com/dtfvdjvyr/image/upload/v1716857660/Frame_103_jnijnd.png"
+            src="https://res.cloudinary.com/dtfvdjvyr/image/upload/v1716968832/Frame_109_dmwurz.png"
             alt="features"
           />
         </div>
