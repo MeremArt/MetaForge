@@ -68,15 +68,7 @@ const Index = () => {
         <br />
         <br />
         <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
+
         <div className="center">
           <div className="mb-20 text-white text-2xl font-bold font-geist ">
             <h2>OUR PARTNERS</h2>
