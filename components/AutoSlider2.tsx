@@ -26,37 +26,43 @@ const AutoPlaySlide2 = () => {
       <Slider {...settings}>
         <div className="individual_slides">
           <img
-            src="https://res.cloudinary.com/dtfvdjvyr/image/upload/v1716857660/Frame_103_jnijnd.png"
+            src="https://res.cloudinary.com/dtfvdjvyr/image/upload/v1717006459/Frame_109_2_omxl1x.png"
             alt="features"
           />
         </div>
         <div className="individual_slides">
           <img
-            src="https://res.cloudinary.com/dtfvdjvyr/image/upload/v1716857534/Frame_107_idhdcb.png"
+            src="https://res.cloudinary.com/dtfvdjvyr/image/upload/v1717006459/Frame_108_2_byiv19.png"
             alt="features"
           />
         </div>
         <div>
           <img
-            src="https://res.cloudinary.com/dtfvdjvyr/image/upload/v1716857236/Frame_108_smedj4.png"
+            src="https://res.cloudinary.com/dtfvdjvyr/image/upload/v1717006458/Frame_107_2_nz2dpi.png"
             alt="features"
           />
         </div>
         <div className="individual_slides">
           <img
-            src="https://res.cloudinary.com/dtfvdjvyr/image/upload/v1716807921/Frame_104_2_jsgsq4.png"
+            src="https://res.cloudinary.com/dtfvdjvyr/image/upload/v1717006458/Frame_106_2_zxpt2r.png"
             alt="features"
           />
         </div>
         <div className="individual_slides">
           <img
-            src="https://res.cloudinary.com/dtfvdjvyr/image/upload/v1716857534/Frame_106_k3n6ez.png"
+            src="https://res.cloudinary.com/dtfvdjvyr/image/upload/v1717006456/Frame_103_2_fcu4h1.png"
             alt="features"
           />
         </div>
         <div className="individual_slides">
           <img
-            src="https://res.cloudinary.com/dtfvdjvyr/image/upload/v1716857238/Frame_105_ppjve4.png"
+            src="https://res.cloudinary.com/dtfvdjvyr/image/upload/v1717006457/Frame_105_2_tkltlr.png"
+            alt="features"
+          />
+        </div>
+        <div className="individual_slides">
+          <img
+            src="https://res.cloudinary.com/dtfvdjvyr/image/upload/v1717006458/Frame_104_3_ayowjm.png"
             alt="features"
           />
         </div>
