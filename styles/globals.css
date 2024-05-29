@@ -87,3 +87,12 @@ html {
     0px 0px 0px 4px rgba(255, 255, 255, 0.2), 0px 0px 180px 0px #d0d5dd;
   transform: translateY(-1px);
 }
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh; /* Full viewport height */
+  text-align: center;
+}

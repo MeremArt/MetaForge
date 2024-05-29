@@ -6,7 +6,7 @@ const Index = () => {
 
   return (
     <main className="overflow-hidden">
-      <section className="background-section ">
+      <section className="background-section mb-72">
         <br />
         <br />
         <br />
@@ -14,21 +14,24 @@ const Index = () => {
         <br />
         <br />
         <br />
-        <br />
-        <center>
-          <div>
+        <div className="">
+          <div className="text-center">
             <h2 className="text-white text-5xl font-bold font-geist ">
               ISSUE. MINT. SHARE. REDEEM
             </h2>
           </div>
-          <div className="mt-8">
-            <p className="text-[#c2c2cccb] font-geist">
-              Gift cards 2.0: MetaForge iNFTs empowers brands and creators to
-              build <br />
-              deeper connections with their customers and communities on-chain.
-            </p>
-          </div>
-          <div className="mt-6">
+          <section className="">
+            <div className="text-center mt-8 ">
+              <p className="text-[#c2c2cccb] font-geist">
+                Gift cards 2.0: MetaForge iNFTs empowers brands and creators to
+                build <br />
+                deeper connections with their customers and communities
+                on-chain.
+              </p>
+            </div>
+          </section>
+
+          <div className="flex items-center justify-center mt-8">
             <button className="gradient-button gap-2 rounded-xl">
               <svg
                 width="23"
@@ -48,26 +51,33 @@ const Index = () => {
               START MINTING
             </button>
           </div>
-          <section className="mt-20 ">
+          <section className="mt-20  ">
             <AutoPlaySlide />
             <AutoPlaySlide2 />
           </section>
-        </center>
+        </div>
       </section>
       <br />
       <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
 
-      <section className="mt-64">
-        <center>
+      <section className="mt-72">
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <div className="center">
           <div className="mb-20 text-white text-2xl font-bold font-geist ">
             <h2>OUR PARTNERS</h2>
             <div className="flex items-center justify-center gap-10 mt-10 ">
@@ -93,34 +103,38 @@ const Index = () => {
           <br />
           <br />
           <br />
-          <div>
-            <h2 className="text-white text-4xl font-bold font-geist ">
-              <span className="mb-4">
-                EXCHANGE REDBULL & COCA-COLA ONCHAIN{" "}
-              </span>{" "}
-              <br /> FOR REAL VALUE
-            </h2>
-          </div>
-          <div className="mt-8">
-            <p className="text-[#c2c2cccb] font-geist">
-              Gift your friends some Redbull and Coca-Cola gift cards on-chain
-              and have them <br />
-              claim the real world value. Other brands coming soon. All on
-              Solana.
-            </p>
-          </div>
-          <div className="flex justify-center items-center gap-5 mt-8">
+
+          <section className="mt-20">
             <div>
-              <button className="bg-[#FCFCFD] btn text-[#0C111D] py-4 px-4 rounded-xl font-geist ">
-                MINT COCA-COLA
-              </button>
+              <h2 className="text-white text-4xl font-bold font-geist ">
+                <span className="mb-4">
+                  EXCHANGE REDBULL & COCA-COLA ONCHAIN{" "}
+                </span>{" "}
+                <br /> FOR REAL VALUE
+              </h2>
             </div>
-            <div>
-              <button className="bg-[#FCFCFD] btn text-[#0C111D] py-4 px-4 rounded-xl font-geist ">
-                MINT REDBULL
-              </button>
+            <div className="mt-8">
+              <p className="text-[#c2c2cccb] font-geist">
+                Gift your friends some Redbull and Coca-Cola gift cards on-chain
+                and have them <br />
+                claim the real world value. Other brands coming soon. All on
+                Solana.
+              </p>
             </div>
-          </div>
+            <div className="flex justify-center items-center gap-5 mt-8">
+              <div>
+                <button className="bg-[#FCFCFD] btn text-[#0C111D] py-4 px-4 rounded-xl font-geist ">
+                  MINT COCA-COLA
+                </button>
+              </div>
+              <div>
+                <button className="bg-[#FCFCFD] btn text-[#0C111D] py-4 px-4 rounded-xl font-geist ">
+                  MINT REDBULL
+                </button>
+              </div>
+            </div>
+          </section>
+
           <section className="">
             <div className="items-center justify-center ">
               <div>
@@ -128,6 +142,8 @@ const Index = () => {
                   src="https://res.cloudinary.com/dtfvdjvyr/image/upload/v1716856736/Group_56_syjzaq.png"
                   alt="image"
                   className="transition-transform duration-300 ease-in-out transform hover:scale-105 "
+                  height={1000}
+                  width={1000}
                 />
               </div>
               {/* <div>
@@ -139,14 +155,14 @@ const Index = () => {
               </div> */}
             </div>
           </section>
-        </center>
+        </div>
         <br />
         <br />
         <br />
       </section>
-      <center className="">
+      <div className="center mt-44">
         <section className="INFTs-background-section rounded-xl"></section>
-      </center>
+      </div>
     </main>
   );
 };
