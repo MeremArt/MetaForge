@@ -161,7 +161,16 @@ const Index = () => {
         <br />
       </section>
       <div className="center mt-52">
-        <section className="INFTs-background-section rounded-xl"></section>
+        <section className=" INFTs-background-section rounded-xl">
+          <h2 className="flex font-geist text-white font-bold text-xl">
+            iNFTs - the future of compressed NFTs
+          </h2>
+          <p className="flex text-left mt-4 text-sm text-[#c2c2cccb]">
+            Compressed NFTs are built on the Solana blockchain and <br /> allow
+            for the creation, distribution & management of NFTs <br /> in a cost
+            efficient manner. SPL tokens + cNFTs = iNFTs
+          </p>
+        </section>
       </div>
     </main>
   );
