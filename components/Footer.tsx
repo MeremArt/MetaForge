@@ -1,6 +1,10 @@
 import React from "react";
 import Countdown from "./countdown";
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+  const XClick = () => {
+    window.location.href = "https://x.com/MTFG_Protocol";
+  };
   return (
     <main className=" ">
       <section className="footer-background-section mx-auto px-8  top-0 w-full z-50 ">
@@ -44,6 +48,38 @@ const Footer = () => {
           </div>
         </div>
         <hr className="text-white text-sm mt-5" />
+
+        <div className="flex items-center justify-between mt-8">
+          <div className="text-white font-geist ">
+            {" "}
+            ©️ {currentYear} Metaforge
+          </div>
+          <div>
+            <h2 className="text-4xl text-white font-bold font-geist">
+              METAFORGE
+            </h2>
+          </div>
+          <div className="flex">
+            <button
+              onClick={XClick}
+              className="flex items-center gap-2 text-white "
+            >
+              Follow us on{" "}
+              <svg
+                width="18"
+                height="16"
+                viewBox="0 0 18 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M14.2399 0.000732422H16.9538L11.0246 6.77748L17.9999 15.9991H12.5383L8.26057 10.4062L3.36591 15.9991H0.650268L6.99222 8.75061L0.300781 0.000732422H5.90099L9.76768 5.11284L14.2399 0.000732422ZM13.2874 14.3746H14.7912L5.0839 1.53985H3.47009L13.2874 14.3746Z"
+                  fill="#FCFCFD"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
       </section>
     </main>
   );

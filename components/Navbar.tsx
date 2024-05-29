@@ -9,9 +9,7 @@ const Navbar = () => {
             <h2 className="font-geist">METAFORGE</h2>
           </div>
           <div className="flex items-center space-x-4">
-            <span className="text-white text-xs font-geist ">
-              HOW DOES IT WORK?
-            </span>
+            <span className="text-white text-xs font-geist "></span>
             <WalletMultiButton className="!bg-[#c2c2cccb] hover:!bg-black transition-all duration-200 !rounded-lg  " />
           </div>
         </div>

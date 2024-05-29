@@ -30,6 +30,15 @@ html {
   width: 100%;
   height: 80vh; /* 100% of the viewport height */
 }
+.INFTs-background-section {
+  background-image: url("https://res.cloudinary.com/dtfvdjvyr/image/upload/v1716936605/Frame_125_utdw0m.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 50px;
+  width: 80%;
+  height: 60vh; /* 100% of the viewport height */
+}
 .gradient-button {
   background: linear-gradient(90deg, #f96900, #d14500);
   border: none;

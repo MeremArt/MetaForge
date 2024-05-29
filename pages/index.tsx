@@ -18,14 +18,14 @@ const Index = () => {
         <center>
           <div>
             <h2 className="text-white text-5xl font-bold font-geist ">
-              <span className="mb-4">YOUR FAVOURITE BRANDS </span> <br />{" "}
-              BROUGHT ON-CHAIN
+              ISSUE. MINT. SHARE. REDEEM
             </h2>
           </div>
           <div className="mt-8">
             <p className="text-[#c2c2cccb] font-geist">
-              Explore gift cards, cNFTs and assets from the brands you love.
-              <br /> All on Solana.
+              Gift cards 2.0: MetaForge iNFTs empowers brands and creators to
+              build <br />
+              deeper connections with their customers and communities on-chain.
             </p>
           </div>
           <div className="mt-6">
@@ -48,7 +48,7 @@ const Index = () => {
               START MINTING
             </button>
           </div>
-          <section className="mt-10 ">
+          <section className="mt-20 ">
             <AutoPlaySlide />
             <AutoPlaySlide2 />
           </section>
@@ -65,8 +65,34 @@ const Index = () => {
       <br />
       <br />
       <br />
+
       <section className="mt-64">
         <center>
+          <div className="mb-20 text-white text-2xl font-bold font-geist ">
+            <h2>OUR PARTNERS</h2>
+            <div className="flex items-center justify-center gap-10 mt-10 ">
+              <div>
+                <img
+                  src="https://res.cloudinary.com/dtfvdjvyr/image/upload/v1716935885/image_5_qtbjdo.png"
+                  alt="image"
+                  height={200}
+                  width={200}
+                />
+              </div>
+              <div>
+                <img
+                  src="https://res.cloudinary.com/dtfvdjvyr/image/upload/v1716936145/solanaLogo_1_re5mzz.png"
+                  alt="image"
+                  height={200}
+                  width={200}
+                />
+              </div>
+            </div>
+          </div>
+          <br />
+          <br />
+          <br />
+          <br />
           <div>
             <h2 className="text-white text-4xl font-bold font-geist ">
               <span className="mb-4">
@@ -118,6 +144,9 @@ const Index = () => {
         <br />
         <br />
       </section>
+      <center className="">
+        <section className="INFTs-background-section rounded-xl"></section>
+      </center>
     </main>
   );
 };
