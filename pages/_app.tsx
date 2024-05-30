@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <title>METAFORGE</title>
         <link
           rel="icon"
-          href="https://res.cloudinary.com/dtfvdjvyr/image/upload/v1717007967/WhatsApp_Image_2024-05-29_at_19.38.39_xftkf9.jpg"
+          href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔨</text></svg>"
         />
         <meta property="og:url" content="metaforgeprotocol.xyz" />
         <meta
