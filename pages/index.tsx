@@ -167,15 +167,12 @@ const Index = () => {
             efficient manner. SPL tokens + cNFTs = iNFTs
           </p>
           <img
-            src="https://res.cloudinary.com/dtfvdjvyr/image/upload/v1717007152/Frame_130_radvqs.png"
+            src="https://res.cloudinary.com/dtfvdjvyr/image/upload/v1717106363/Frame_130_1_dpxl0e.png"
             alt="image"
             height={500}
             width={500}
             className="mt-5"
           />
-          <button className="flex mt-5 bg-[#FCFCFD] btn text-[#0C111D] py-4 px-4 rounded-xl font-geist">
-            Get Started
-          </button>
         </section>
       </div>
     </main>
