@@ -92,8 +92,8 @@ const Index = () => {
                 <img
                   src="https://res.cloudinary.com/dtfvdjvyr/image/upload/v1717105595/Frame_140_1_y1ap4r.png"
                   alt="image"
-                  height={200}
-                  width={200}
+                  height={150}
+                  width={150}
                 />
               </div>
             </div>
