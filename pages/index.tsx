@@ -23,8 +23,7 @@ const Index = () => {
           <section className="">
             <div className="text-center mt-8 ">
               <p className="text-[#c2c2cccb] font-geist">
-                Gift cards 2.0: MetaForge iNFTs empowers brands and creators to
-                build <br />
+                MetaForge iNFTs empowers brands and creators to build <br />
                 deeper connections with their customers and communities
                 on-chain.
               </p>
@@ -89,6 +88,14 @@ const Index = () => {
                   width={200}
                 />
               </div>
+              <div>
+                <img
+                  src="https://res.cloudinary.com/dtfvdjvyr/image/upload/v1717105595/Frame_140_1_y1ap4r.png"
+                  alt="image"
+                  height={200}
+                  width={200}
+                />
+              </div>
             </div>
           </div>
           <br />
@@ -99,10 +106,7 @@ const Index = () => {
           <section className="mt-20">
             <div>
               <h2 className="text-white text-4xl font-bold font-geist ">
-                <span className="mb-4">
-                  EXCHANGE REDBULL & COCA-COLA ONCHAIN{" "}
-                </span>{" "}
-                <br /> FOR REAL VALUE
+                BRING YOUR FAVOURITE BRANDS ON-CHAIN
               </h2>
             </div>
             <div className="mt-8">
