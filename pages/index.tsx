@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import AutoPlaySlide from "../components/AutoSlider";
 import AutoPlaySlide2 from "../components/AutoSlider2";
 import Modal from "../components/cokeModal";
+import RedModal from "../components/redBullmodal";
 const Index = () => {
   const [displayRequirements, setDisplayRequirements] = React.useState(false);
 
@@ -21,6 +22,7 @@ const Index = () => {
     },
   ];
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isRedModalOpen, setIsRedModalOpen] = useState(false);
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -28,6 +30,14 @@ const Index = () => {
 
   const closeModal = () => {
     setIsModalOpen(false);
+  };
+
+  const redOpenModal = () => {
+    setIsRedModalOpen(true);
+  };
+
+  const redCloseModal = () => {
+    setIsRedModalOpen(false);
   };
 
   return (
@@ -86,9 +96,6 @@ const Index = () => {
       <br />
 
       <section className="mt-72">
-        <br />
-        <br />
-        <br />
         <br />
         <br />
         <br />
@@ -157,13 +164,26 @@ const Index = () => {
                 </Modal>
               </div>
               <div>
-                <button className="bg-[#FCFCFD] btn text-[#0C111D] py-4 px-4 rounded-xl font-geist ">
+                <button
+                  onClick={redOpenModal}
+                  className="bg-[#FCFCFD] btn text-[#0C111D] py-4 px-4 rounded-xl font-geist "
+                >
                   MINT REDBULL
                 </button>
+                <RedModal isOpen={isRedModalOpen} onClose={redCloseModal}>
+                  <section className="justify-center mt-8  items-center w-full ">
+                    <div className="flex">
+                      <div className="linear-background w-1/2"></div>
+                      <div className="w-1/2 bg-slate-50"></div>
+                    </div>
+                  </section>
+                </RedModal>
               </div>
             </div>
           </section>
         </div>
+        <br />
+        <br />
         <br />
         <br />
         <br />
