@@ -69,7 +69,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
                     <h2 className="font-geist text-white text-sm">
                       DATE CREATED
                     </h2>
-                    <p className="text-sm text-[#c2c2cccb] mt-3">
+                    <p className="flex text-sm text-[#c2c2cccb] mt-3">
                       {currentDate}
                     </p>
                   </div>
