@@ -38,7 +38,7 @@ const Countdown = () => {
       <div className="bg-[#344054] py-2 px-2 w-44 mb-4 rounded-xl">
         <p className="text-white font-geist w-full">LAUNCHING IN...</p>
       </div>
-      <p className="text-white font-bold text-4xl">{`${days}D : ${hours}H : ${minutes}M : ${seconds}S`}</p>
+      <p className="text-white font-bold text-4xl">{`${days}D : ${hours}H `}</p>
       <p className="text-[#c2c2cccb] font-geist mt-2">
         Connect a wallet and start minting
       </p>
