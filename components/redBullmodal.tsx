@@ -41,7 +41,7 @@ const RedModal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
           <div className="rounded-r-md bg-[#0c111d] w-3/5">
             <div className="flex flex-col items-start px-14 py-10">
               <h2 className="font-geist text-white font-bold text-xl">
-                A CAN OF COCACOLA
+                A CAN OF REDBULL
               </h2>
               <p className="text-sm text-[#c2c2cccb] mt-3">
                 You are about to mint a can of Redbull
@@ -49,7 +49,7 @@ const RedModal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
               <hr className="custom-hr mt-5 opacity-20" />
               <div className="flex justify-between w-full mt-4">
                 <div>
-                  <h2 className="font-geist mr-3 text-white text-sm">
+                  <h2 className="font-geist mr-10 text-white text-sm">
                     CREATED BY
                   </h2>
                   <p className="flex  text-sm text-[#c2c2cccb] mt-3">

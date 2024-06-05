@@ -77,12 +77,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
                 </h2>
                 <p className="text-sm text-[#c2c2cccb] ">0.02 SOL</p>
               </div>
-              {/* <div className="flex flex-col items-start mt-4  ">
-                <h2 className="font-geist text-white  text-sm">
-                  ADDITIONAL INFORMATION
-                </h2>
-                <p className="text-sm text-[#c2c2cccb] ">0.02 SOL</p>
-              </div> */}
+
               <div className="flex items-center justify-center mt-6 w-full ">
                 <button className="gradient-button text-center items-center justify-center gap-2 rounded-xl w-full">
                   MINT
