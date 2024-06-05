@@ -23,7 +23,14 @@ const RedModal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
               width={200}
             />
           </div>
-          <div className="rounded-r-md bg-[#0c111d]  w-3/5"></div>
+          <div className="rounded-r-md bg-[#0c111d]  w-3/5">
+            <div>
+              <h2>A CAN OF COCACOLA</h2>
+              <p className="text-sm text-[#c2c2cccb]">
+                You are about to mint a can of Coca-Cola
+              </p>
+            </div>
+          </div>
         </div>
         {children}
       </div>

@@ -11,6 +11,10 @@ html {
 .font-geist {
   font-family: "Geist Mono Variable", monospace;
 }
+.custom-hr {
+  border: 1px solid #c2c2cccb;
+  width: 100%;
+}
 
 .linear-background {
   background: linear-gradient(to right, #6061e3, #283cb6);
