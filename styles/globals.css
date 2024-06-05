@@ -12,6 +12,11 @@ html {
   font-family: "Geist Mono Variable", monospace;
 }
 
+.linear-background {
+  background: linear-gradient(to right, #6061e3, #283cb6);
+
+  height: 100%;
+}
 .background-section {
   background-image: url("https://res.cloudinary.com/dtfvdjvyr/image/upload/v1716802024/Gradient_4_1_tpdi2v.png");
   background-size: cover;

@@ -1,8 +1,34 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import AutoPlaySlide from "../components/AutoSlider";
 import AutoPlaySlide2 from "../components/AutoSlider2";
+import Modal from "../components/cokeModal";
 const Index = () => {
   const [displayRequirements, setDisplayRequirements] = React.useState(false);
+
+  const partners = [
+    {
+      src: "https://res.cloudinary.com/dtfvdjvyr/image/upload/v1716935885/image_5_qtbjdo.png",
+      alt: "Partner 1",
+    },
+    {
+      src: "https://res.cloudinary.com/dtfvdjvyr/image/upload/v1716936145/solanaLogo_1_re5mzz.png",
+      alt: "Partner 2",
+    },
+    {
+      src: "https://res.cloudinary.com/dtfvdjvyr/image/upload/v1717603483/Frame_140_2_aknncv.png",
+      alt: "Partner 3",
+    },
+  ];
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
   return (
     <main className="overflow-hidden">
@@ -69,42 +95,36 @@ const Index = () => {
         <br />
 
         <div className="center">
-          <div className="mb-20 text-white text-2xl font-bold font-geist ">
+          <div className="mb-20 text-white text-3xl font-bold font-geist ">
             <h2>OUR PARTNERS</h2>
             <div className="flex items-center justify-center gap-10 mt-10 ">
+              {partners.map((partner, index) => (
+                <div key={index}>
+                  <img
+                    src={partner.src}
+                    alt={partner.alt}
+                    height={150}
+                    width={150}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <section className="">
+            <div className="items-center justify-center ">
               <div>
                 <img
-                  src="https://res.cloudinary.com/dtfvdjvyr/image/upload/v1716935885/image_5_qtbjdo.png"
+                  src="https://res.cloudinary.com/dtfvdjvyr/image/upload/v1716856736/Group_56_syjzaq.png"
                   alt="image"
-                  height={200}
-                  width={200}
-                />
-              </div>
-              <div>
-                <img
-                  src="https://res.cloudinary.com/dtfvdjvyr/image/upload/v1716936145/solanaLogo_1_re5mzz.png"
-                  alt="image"
-                  height={200}
-                  width={200}
-                />
-              </div>
-              <div>
-                <img
-                  src="https://res.cloudinary.com/dtfvdjvyr/image/upload/v1717105595/Frame_140_1_y1ap4r.png"
-                  alt="image"
-                  height={150}
-                  width={150}
+                  className="transition-transform duration-300 ease-in-out transform hover:scale-105 "
+                  height={1000}
+                  width={1000}
                 />
               </div>
             </div>
-          </div>
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <section className="mt-20">
+          </section>
+          <section className="mt-5">
             <div>
               <h2 className="text-white text-4xl font-bold font-geist ">
                 BRING YOUR FAVOURITE BRANDS ON-CHAIN
@@ -120,36 +140,27 @@ const Index = () => {
             </div>
             <div className="flex justify-center items-center gap-5 mt-8">
               <div>
-                <button className="bg-[#FCFCFD] btn text-[#0C111D] py-4 px-4 rounded-xl font-geist ">
+                <button
+                  onClick={openModal}
+                  className="bg-[#FCFCFD] btn text-[#0C111D] py-4 px-4 rounded-xl font-geist "
+                >
                   MINT COCA-COLA
                 </button>
+
+                <Modal isOpen={isModalOpen} onClose={closeModal}>
+                  <section className="justify-center mt-8  items-center w-full ">
+                    <div className="flex">
+                      <div className="linear-background w-1/2"></div>
+                      <div className="w-1/2 bg-slate-50"></div>
+                    </div>
+                  </section>
+                </Modal>
               </div>
               <div>
                 <button className="bg-[#FCFCFD] btn text-[#0C111D] py-4 px-4 rounded-xl font-geist ">
                   MINT REDBULL
                 </button>
               </div>
-            </div>
-          </section>
-
-          <section className="">
-            <div className="items-center justify-center ">
-              <div>
-                <img
-                  src="https://res.cloudinary.com/dtfvdjvyr/image/upload/v1716856736/Group_56_syjzaq.png"
-                  alt="image"
-                  className="transition-transform duration-300 ease-in-out transform hover:scale-105 "
-                  height={1000}
-                  width={1000}
-                />
-              </div>
-              {/* <div>
-                <img
-                  src="https://res.cloudinary.com/dtfvdjvyr/image/upload/v1716856022/Group_55_xbnwkt.png"
-                  alt="image"
-                  className="bg-none transition-transform duration-300 ease-in-out transform hover:scale-105 "
-                />
-              </div> */}
             </div>
           </section>
         </div>

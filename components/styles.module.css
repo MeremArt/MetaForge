@@ -1,0 +1,50 @@
+@import url("https://cdn.jsdelivr.net/gh/dhg/Geist-Mono/GeistMono.css");
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal.open {
+  display: block;
+}
+
+.modal-content {
+  margin: auto;
+  margin-top: 10%;
+  padding: 30px;
+  width: 800px;
+  height: 500px;
+  max-width: 900px;
+  border-radius: 10px;
+}
+
+.close {
+  color: #d0d5dd;
+  float: left;
+  font-size: 15px;
+  padding: 10px;
+  text-decoration: underline;
+  text-decoration-color: #fff;
+  font-family: "Geist Mono Variable", monospace;
+}
+
+.close:hover,
+.close:focus {
+  color: #aaa;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.flex-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
