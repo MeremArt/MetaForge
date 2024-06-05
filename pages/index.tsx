@@ -58,7 +58,7 @@ const Index = () => {
           </div>
           <section className="">
             <div className="text-center mt-8 ">
-              <p className="text-[#c2c2cccb] font-geist">
+              <p className="text-[#c2c2cccb] ">
                 MetaForge iNFTs empowers brands and creators to build <br />
                 deeper connections with their customers and communities
                 on-chain.
@@ -138,7 +138,7 @@ const Index = () => {
               </h2>
             </div>
             <div className="mt-8">
-              <p className="text-[#c2c2cccb] font-geist">
+              <p className="text-[#c2c2cccb] ">
                 Gift your friends some Redbull and Coca-Cola gift cards on-chain
                 and have them <br />
                 claim the real world value. Other brands coming soon. All on
