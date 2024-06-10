@@ -4,6 +4,27 @@ import AutoPlaySlide from "../components/AutoSlider";
 import AutoPlaySlide2 from "../components/AutoSlider2";
 import Modal from "../components/cokeModal";
 import RedModal from "../components/redBullmodal";
+import * as anchor from "@coral-xyz/anchor";
+import { AnchorProvider, Program, Wallet, web3 } from "@coral-xyz/anchor";
+import { BbNft, IDL } from "../target/types/bb_nft";
+import {
+  SPL_ACCOUNT_COMPRESSION_PROGRAM_ID,
+  SPL_NOOP_PROGRAM_ID,
+} from "@solana/spl-account-compression";
+import { PublicKey } from "@solana/web3.js";
+import {
+  findTreeConfigPda,
+  MPL_BUBBLEGUM_PROGRAM_ID,
+} from "@metaplex-foundation/mpl-bubblegum";
+import {
+  keypairFromSecret,
+  keypairSignerFromSecret,
+  loadWalletKey,
+} from "../utils";
+import {
+  KeypairSigner,
+  publicKey as umiPublicKey,
+} from "@metaplex-foundation/umi";
 const Index = () => {
   const [displayRequirements, setDisplayRequirements] = React.useState(false);
 

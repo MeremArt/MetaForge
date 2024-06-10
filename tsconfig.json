@@ -25,5 +25,7 @@
     "pages/sendsol/sendsol.jsx",
     "pages/_app.jsx"
   ],
+  "maxNodeModuleJsDepth": 1,
+  "skipLibCheck": true,
   "exclude": ["node_modules"]
 }

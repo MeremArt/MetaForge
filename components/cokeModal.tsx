@@ -50,7 +50,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
             <div className="rounded-r-md bg-[#0c111d] w-3/5">
               <div className="flex flex-col items-start px-14 py-10">
                 <h2 className="font-geist text-white font-bold text-xl">
-                  A CAN OF COCACOLA
+                  A CAN OF BonkCOLA
                 </h2>
                 <p className="text-sm text-[#c2c2cccb] mt-3">
                   You are about to mint a can of Coca-Cola

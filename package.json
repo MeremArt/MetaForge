@@ -9,9 +9,14 @@
     "server": "nodemon pages/api/index.js"
   },
   "dependencies": {
+    "@coral-xyz/anchor": "^0.30.0",
     "@headlessui/react": "^1.6.6",
     "@heroicons/react": "^1.0.6",
+    "@metaplex-foundation/mpl-bubblegum": "^4.1.0",
+    "@metaplex-foundation/mpl-candy-machine": "^6.0.1",
+    "@metaplex-foundation/umi-bundle-defaults": "^0.9.1",
     "@project-serum/borsh": "^0.2.5",
+    "@solana/spl-account-compression": "^0.2.1",
     "@solana/spl-token": "^0.2.0",
     "@solana/wallet-adapter-backpack": "^0.1.14",
     "@solana/wallet-adapter-base": "^0.9.7",
