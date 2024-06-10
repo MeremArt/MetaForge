@@ -42,9 +42,9 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
                 Back
               </span>
               <img
-                src="https://res.cloudinary.com/dtfvdjvyr/image/upload/v1717613355/Frame_146_1_rj3qfe.png"
-                height={200}
-                width={200}
+                src="https://res.cloudinary.com/dtfvdjvyr/image/upload/v1718022542/OXNIVI1_1_1_zevv25.png"
+                height={280}
+                width={280}
               />
             </div>
             <div className="rounded-r-md bg-[#0c111d] w-3/5">

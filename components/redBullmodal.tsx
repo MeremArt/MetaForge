@@ -41,9 +41,9 @@ const RedModal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
                 Back
               </span>
               <img
-                src="https://res.cloudinary.com/dtfvdjvyr/image/upload/v1717615406/Frame_146_2_oefyph.png"
-                height={200}
-                width={200}
+                src="https://res.cloudinary.com/dtfvdjvyr/image/upload/v1718022126/OXNIVI1_2_1_oxmt9i.png"
+                height={280}
+                width={280}
               />
             </div>
             <div className="rounded-r-md bg-[#0c111d] w-3/5">
