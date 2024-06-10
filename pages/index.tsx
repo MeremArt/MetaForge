@@ -122,7 +122,7 @@ const Index = () => {
             <div className="items-center justify-center ">
               <div>
                 <img
-                  src="https://res.cloudinary.com/dtfvdjvyr/image/upload/v1716856736/Group_56_syjzaq.png"
+                  src="https://res.cloudinary.com/dtfvdjvyr/image/upload/v1718023046/Graphic_fnqpmc.png"
                   alt="image"
                   className="transition-transform duration-300 ease-in-out transform hover:scale-105 "
                   height={1000}
