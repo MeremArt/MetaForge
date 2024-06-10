@@ -22,8 +22,8 @@ interface ModalProps {
 }
 
 const RedModal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
-  const { publicKey, sendTransaction } = useWallet();
-  const { wallet: sth } = useWallet();
+  const { wallet, publicKey, sendTransaction } = useWallet();
+
   const walletAddress = publicKey ? publicKey.toBase58() : "";
   const { connection } = useConnection();
 
@@ -47,12 +47,12 @@ const RedModal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
     }
 
     try {
-      const provider = new AnchorProvider(connection, sth, {});
+      const provider = new AnchorProvider(connection, wallet, {});
       const programId = new PublicKey(
         "23UbaEAHYvXWG3Af7BeVVsSDHfS3HcxHiWqSGrZR7S86"
       );
 
-      const program = new Program<BbNft>(IDL, programId, provider);
+      const program = new Program<any>(programId, provider);
 
       const asset = new PublicKey(
         "9jcPQz32ZnzH3x861wXVnRPKv4wWqBJTo7XYPzFf8FUt"
