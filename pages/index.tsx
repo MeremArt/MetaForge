@@ -39,6 +39,12 @@ const Index = () => {
   const redCloseModal = () => {
     setIsRedModalOpen(false);
   };
+  const scrollToTarget = () => {
+    const targetElement = document.getElementById("target");
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <main className="overflow-hidden">
@@ -67,7 +73,10 @@ const Index = () => {
           </section>
 
           <div className="flex items-center justify-center mt-8">
-            <button className="gradient-button gap-2 rounded-xl">
+            <button
+              onClick={scrollToTarget}
+              className="gradient-button gap-2 rounded-xl"
+            >
               <svg
                 width="23"
                 height="22"
@@ -132,7 +141,7 @@ const Index = () => {
             </div>
           </section>
           <section className="mt-5">
-            <div>
+            <div id="target">
               <h2 className="text-white text-4xl font-bold font-geist ">
                 BRING YOUR FAVOURITE BRANDS ON-CHAIN
               </h2>

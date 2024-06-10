@@ -5,6 +5,12 @@ const Footer = () => {
   const XClick = () => {
     window.location.href = "https://x.com/MTFG_Protocol";
   };
+  const scrollToTarget = () => {
+    const targetElement = document.getElementById("target");
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <main className=" ">
       <section className="footer-background-section mx-auto px-8  top-0 w-full z-50 ">
@@ -26,7 +32,10 @@ const Footer = () => {
           </div>
           <div>
             <div className="">
-              <button className="gradient-button gap-2 rounded-xl">
+              <button
+                onClick={scrollToTarget}
+                className="gradient-button gap-2 rounded-xl"
+              >
                 <svg
                   width="23"
                   height="22"
