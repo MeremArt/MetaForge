@@ -16,7 +16,7 @@ import {
   SPL_NOOP_PROGRAM_ID,
   SPL_ACCOUNT_COMPRESSION_PROGRAM_ID,
 } from "@solana/spl-account-compression";
-import Success from "./success";
+import Success from "./Success";
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
