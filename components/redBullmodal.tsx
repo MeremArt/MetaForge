@@ -9,8 +9,7 @@ import {
   Transaction,
   TransactionInstruction,
 } from "@solana/web3.js";
-import { BbNft } from "../target/BbNft";
-import { IDL } from "../target/IDL";
+
 import { MPL_BUBBLEGUM_PROGRAM_ID } from "@metaplex-foundation/mpl-bubblegum";
 import {
   SPL_NOOP_PROGRAM_ID,

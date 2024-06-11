@@ -6,7 +6,7 @@ import Modal from "../components/cokeModal";
 import RedModal from "../components/redBullmodal";
 import * as anchor from "@coral-xyz/anchor";
 import { AnchorProvider, Program, Wallet, web3 } from "@coral-xyz/anchor";
-import { BbNft, IDL } from "../target/types/bb_nft";
+
 import {
   SPL_ACCOUNT_COMPRESSION_PROGRAM_ID,
   SPL_NOOP_PROGRAM_ID,
