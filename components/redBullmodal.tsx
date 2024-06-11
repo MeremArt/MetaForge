@@ -24,16 +24,22 @@ interface ModalProps {
 }
 
 const RedModal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
-  const [itModalOpen, setItModalOpen] = useState(false);
-  const openSuccessModal = () => {
-    setItModalOpen(true);
-  };
-
-  const closeSuccessModal = () => {
-    setItModalOpen(false);
-  };
+  const [isSuccessOpen, setIsSuccessOpen] = useState(false);
 
   const { publicKey, wallet, signTransaction, sendTransaction } = useWallet();
+  const handleMint = () => {
+    if (!publicKey) {
+      alert("Please connect your wallet to mint.");
+      return;
+    }
+    console.log("Minting...");
+    setIsSuccessOpen(true);
+  };
+
+  const handleSuccessClose = () => {
+    setIsSuccessOpen(false);
+  };
+
   const { connection } = useConnection();
 
   const walletAddress = publicKey ? publicKey.toBase58() : "";
@@ -139,8 +145,6 @@ const RedModal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
     } catch (error) {
       console.error("Error minting NFT:", error);
     }
-
-    openSuccessModal();
   }, [publicKey, wallet, connection, signTransaction, sendTransaction]);
 
   // ... (rest of the component remains the same)
@@ -207,20 +211,11 @@ const RedModal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
                 </div>
                 <div className="flex items-center justify-center mt-6 w-full">
                   <button
-                    onClick={openSuccessModal}
+                    onClick={handleMint}
                     className="gradient-button text-center items-center justify-center gap-2 rounded-xl w-full"
                   >
                     MINT
                   </button>
-
-                  <Success isOpen={itModalOpen} onClose={closeSuccessModal}>
-                    <section className="justify-center mt-8  items-center w-full ">
-                      <div className="flex">
-                        <div className="linear-background w-1/2"></div>
-                        <div className="w-1/2 bg-slate-50"></div>
-                      </div>
-                    </section>
-                  </Success>
                 </div>
               </div>
             </div>
@@ -228,6 +223,7 @@ const RedModal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
           {children}
         </div>
       </div>
+      <Success isOpen={isSuccessOpen} onClose={handleSuccessClose} />
     </>
   );
 };

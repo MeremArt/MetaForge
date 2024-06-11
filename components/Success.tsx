@@ -11,7 +11,7 @@ const Success: React.FC<SuccessProps> = ({ isOpen, onClose, children }) => {
   return (
     <>
       {isOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm"></div>
+        <div className="fixed inset-0 bg-black bg-opacity-90 backdrop-blur-lg"></div>
       )}
       <div
         className={`${styles.modal} ${

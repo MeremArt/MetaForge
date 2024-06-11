@@ -2,8 +2,7 @@
 import React, { useState } from "react";
 import styles from "./styles.module.css";
 import { useWallet } from "@solana/wallet-adapter-react";
-import Success from "./Success";
-
+import Success from "./success";
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -12,8 +11,12 @@ interface ModalProps {
 
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
   const [isSuccessOpen, setIsSuccessOpen] = useState(false);
-
+  const { publicKey } = useWallet();
   const handleMint = () => {
+    if (!publicKey) {
+      alert("Please connect your wallet to mint.");
+      return;
+    }
     console.log("Minting...");
     setIsSuccessOpen(true);
   };
@@ -22,7 +25,6 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
     setIsSuccessOpen(false);
   };
 
-  const { publicKey } = useWallet();
   const walletAddress = publicKey ? publicKey.toBase58() : "";
 
   const formatDate = (date: Date): string => {
