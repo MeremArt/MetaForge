@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import styles from "./styles.module.css";
 import { useWallet } from "@solana/wallet-adapter-react";
-import Success from "./success";
+import Success from "./Success";
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
