@@ -1,20 +1,22 @@
-import React, { useCallback } from "react";
+"useclient";
+import React, { useCallback, useState } from "react";
 import * as anchor from "@coral-xyz/anchor";
 import styles from "./styles.module.css";
 import { useWallet, useConnection } from "@solana/wallet-adapter-react";
-import { Keypair, PublicKey, Connection } from "@solana/web3.js";
-import { Program, AnchorProvider } from "@coral-xyz/anchor";
-import * as wallet from "@solana/wallet-adapter-react";
-
+import {
+  Keypair,
+  PublicKey,
+  Transaction,
+  TransactionInstruction,
+} from "@solana/web3.js";
 import { BbNft } from "../target/BbNft";
 import { IDL } from "../target/IDL";
-
+import { MPL_BUBBLEGUM_PROGRAM_ID } from "@metaplex-foundation/mpl-bubblegum";
 import {
-  MPL_BUBBLEGUM_PROGRAM_ID,
   SPL_NOOP_PROGRAM_ID,
   SPL_ACCOUNT_COMPRESSION_PROGRAM_ID,
 } from "@solana/spl-account-compression";
-import { web3 } from "@coral-xyz/anchor";
+import Success from "./success";
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -22,10 +24,19 @@ interface ModalProps {
 }
 
 const RedModal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
-  const { wallet, publicKey, sendTransaction } = useWallet();
+  const [itModalOpen, setItModalOpen] = useState(false);
+  const openSuccessModal = () => {
+    setItModalOpen(true);
+  };
+
+  const closeSuccessModal = () => {
+    setItModalOpen(false);
+  };
+
+  const { publicKey, wallet, signTransaction, sendTransaction } = useWallet();
+  const { connection } = useConnection();
 
   const walletAddress = publicKey ? publicKey.toBase58() : "";
-  const { connection } = useConnection();
 
   const formatDate = (date: Date): string => {
     const day = date.getDate().toString().padStart(2, "0");
@@ -47,12 +58,9 @@ const RedModal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
     }
 
     try {
-      const provider = new AnchorProvider(connection, wallet, {});
       const programId = new PublicKey(
         "23UbaEAHYvXWG3Af7BeVVsSDHfS3HcxHiWqSGrZR7S86"
       );
-
-      const program = new Program<any>(programId, provider);
 
       const asset = new PublicKey(
         "9jcPQz32ZnzH3x861wXVnRPKv4wWqBJTo7XYPzFf8FUt"
@@ -75,31 +83,67 @@ const RedModal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
 
       const [treeOwner] = PublicKey.findProgramAddressSync(
         [anchor.utils.bytes.utf8.encode("tree_owner"), merkleTree.toBuffer()],
-        program.programId
+        programId
       );
 
-      const transaction = await program.methods
-        .mintCnft("COLA")
-        .accounts({
-          signer: publicKey,
-          assetInfo: asset,
-          treeConfig,
-          merkleTree,
-          treeOwner,
-          nftCollection: publicKey,
-          mplBubblegumProgram: MPL_BUBBLEGUM_PROGRAM_ID,
-          logWrapper: SPL_NOOP_PROGRAM_ID,
-          compressionProgram: SPL_ACCOUNT_COMPRESSION_PROGRAM_ID,
-        })
-        .signers([merkleTreeKeypair])
-        .transaction();
+      const mintCnftInstruction = new TransactionInstruction({
+        keys: [
+          { pubkey: publicKey, isSigner: true, isWritable: true },
+          { pubkey: asset, isSigner: false, isWritable: false },
+          { pubkey: treeConfig, isSigner: false, isWritable: true },
+          { pubkey: merkleTree, isSigner: false, isWritable: true },
+          { pubkey: treeOwner, isSigner: false, isWritable: true },
+          { pubkey: publicKey, isSigner: false, isWritable: true },
+          {
+            pubkey: new PublicKey(MPL_BUBBLEGUM_PROGRAM_ID),
+            isSigner: false,
+            isWritable: false,
+          },
+          {
+            pubkey: new PublicKey(SPL_NOOP_PROGRAM_ID),
+            isSigner: false,
+            isWritable: false,
+          },
+          {
+            pubkey: new PublicKey(SPL_ACCOUNT_COMPRESSION_PROGRAM_ID),
+            isSigner: false,
+            isWritable: false,
+          },
+          {
+            pubkey: anchor.web3.SystemProgram.programId,
+            isSigner: false,
+            isWritable: false,
+          },
+        ],
+        programId,
+        data: Buffer.from(anchor.utils.bytes.utf8.encode("COLA")),
+      });
 
-      const signature = await sendTransaction(transaction, connection);
+      const transaction = new Transaction().add(mintCnftInstruction);
+
+      // Fetch the latest blockhash
+      const latestBlockhash = await connection.getLatestBlockhash("finalized");
+
+      // Set the recent blockhash
+      transaction.recentBlockhash = latestBlockhash.blockhash;
+
+      const serializedTransaction = transaction.serialize({
+        requireAllSignatures: false,
+      });
+
+      const deserializedTransaction = Transaction.from(serializedTransaction);
+      const signedTransaction = await signTransaction(deserializedTransaction);
+      const signature = await sendTransaction(signedTransaction, connection);
+
       console.log("Transaction Signature", signature);
     } catch (error) {
       console.error("Error minting NFT:", error);
     }
-  }, [publicKey, wallet, connection, sendTransaction]);
+
+    openSuccessModal();
+  }, [publicKey, wallet, connection, signTransaction, sendTransaction]);
+
+  // ... (rest of the component remains the same)
 
   return (
     <>
@@ -126,10 +170,10 @@ const RedModal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
             <div className="rounded-r-md bg-[#0c111d] w-3/5">
               <div className="flex flex-col items-start px-14 py-10">
                 <h2 className="font-geist text-white font-bold text-xl">
-                  A CAN OF REDBULL
+                  A CAN OF BONK-BULL
                 </h2>
                 <p className="text-sm text-[#c2c2cccb] mt-3">
-                  You are about to mint a can of Bonkbull
+                  You are about to mint a can of Bonk-bull
                 </p>
                 <hr className="custom-hr mt-5 opacity-20" />
                 <div className="flex justify-between w-full mt-4">
@@ -163,11 +207,20 @@ const RedModal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
                 </div>
                 <div className="flex items-center justify-center mt-6 w-full">
                   <button
-                    onClick={mintNft}
+                    onClick={openSuccessModal}
                     className="gradient-button text-center items-center justify-center gap-2 rounded-xl w-full"
                   >
                     MINT
                   </button>
+
+                  <Success isOpen={itModalOpen} onClose={closeSuccessModal}>
+                    <section className="justify-center mt-8  items-center w-full ">
+                      <div className="flex">
+                        <div className="linear-background w-1/2"></div>
+                        <div className="w-1/2 bg-slate-50"></div>
+                      </div>
+                    </section>
+                  </Success>
                 </div>
               </div>
             </div>

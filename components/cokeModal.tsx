@@ -1,14 +1,27 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import styles from "./styles.module.css";
 import { useWallet } from "@solana/wallet-adapter-react";
+import Success from "./Success";
 
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
+  const [isSuccessOpen, setIsSuccessOpen] = useState(false);
+
+  const handleMint = () => {
+    console.log("Minting...");
+    setIsSuccessOpen(true);
+  };
+
+  const handleSuccessClose = () => {
+    setIsSuccessOpen(false);
+  };
+
   const { publicKey } = useWallet();
   const walletAddress = publicKey ? publicKey.toBase58() : "";
 
@@ -28,7 +41,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
   return (
     <>
       {isOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm "></div>
+        <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm"></div>
       )}
       <div
         className={`${styles.modal} ${
@@ -50,10 +63,10 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
             <div className="rounded-r-md bg-[#0c111d] w-3/5">
               <div className="flex flex-col items-start px-14 py-10">
                 <h2 className="font-geist text-white font-bold text-xl">
-                  A CAN OF BonkCOLA
+                  A CAN OF BONK-COLA
                 </h2>
                 <p className="text-sm text-[#c2c2cccb] mt-3">
-                  You are about to mint a can of Coca-Cola
+                  You are about to mint a can of Bonk-Cola
                 </p>
                 <hr className="custom-hr mt-5 opacity-20" />
                 <div className="flex justify-between w-full mt-4">
@@ -86,7 +99,10 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
                   <p className="text-sm text-[#c2c2cccb]">0.02 SOL</p>
                 </div>
                 <div className="flex items-center justify-center mt-6 w-full">
-                  <button className="gradient-button text-center items-center justify-center gap-2 rounded-xl w-full">
+                  <button
+                    onClick={handleMint}
+                    className="gradient-button text-center items-center justify-center gap-2 rounded-xl w-full"
+                  >
                     MINT
                   </button>
                 </div>
@@ -96,6 +112,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
           {children}
         </div>
       </div>
+      <Success isOpen={isSuccessOpen} onClose={handleSuccessClose} />
     </>
   );
 };
