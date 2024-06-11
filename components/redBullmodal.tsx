@@ -138,7 +138,7 @@ const RedModal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
       });
 
       const deserializedTransaction = Transaction.from(serializedTransaction);
-      const signedTransaction = await signTransaction(deserializedTransaction);
+      const signedTransaction = await deserializedTransaction;
       const signature = await sendTransaction(signedTransaction, connection);
 
       console.log("Transaction Signature", signature);
