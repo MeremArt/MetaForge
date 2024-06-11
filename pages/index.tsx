@@ -16,11 +16,7 @@ import {
   findTreeConfigPda,
   MPL_BUBBLEGUM_PROGRAM_ID,
 } from "@metaplex-foundation/mpl-bubblegum";
-import {
-  keypairFromSecret,
-  keypairSignerFromSecret,
-  loadWalletKey,
-} from "../utils";
+
 import {
   KeypairSigner,
   publicKey as umiPublicKey,
