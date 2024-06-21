@@ -2,6 +2,7 @@
 import React, { useCallback, useState } from "react";
 import * as anchor from "@coral-xyz/anchor";
 import styles from "./styles.module.css";
+import * as web3 from "@solana/web3.js";
 import { useWallet, useConnection } from "@solana/wallet-adapter-react";
 import {
   Keypair,
@@ -137,7 +138,9 @@ const RedModal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
       });
 
       const deserializedTransaction = Transaction.from(serializedTransaction);
-      const signedTransaction = await deserializedTransaction;
+      const signedTransaction = await (
+        deserializedTransaction
+      );
       const signature = await sendTransaction(signedTransaction, connection);
 
       console.log("Transaction Signature", signature);
